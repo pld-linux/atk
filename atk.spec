@@ -1,8 +1,8 @@
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - Toolkit udostêpniaj±cy
 Name:		atk
-Version:	0.8
-Release:	2
+Version:	0.10
+Release:	1
 License:	GPL
 Group:		Libraries
 Group(de):	Libraries
@@ -14,10 +14,10 @@ Group(ru):	âÉÂÌÉÏÔÅËÉ
 Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 Source0:	ftp://ftp.gtk.org/pub/gtk/v1.3/%{name}-%{version}.tar.gz
 URL:		http://developer.gnome.org/projects/gap/
-BuildRequires:	pkgconfig
-BuildRequires:	glib2-devel >= 1.3.12
-BuildRequires:	pango
 BuildRequires:	diffutils
+BuildRequires:	glib2-devel >= 1.3.13
+BuildRequires:	pango-devel
+BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libatk8
 
@@ -103,7 +103,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/liba*.??
 %{_includedir}/atk*
-%attr(644,root,root) %{_pkgconfigdir}/atk*
+%{_pkgconfigdir}/atk*
 %{_datadir}/gtk-doc/html/atk
 
 %files static
