@@ -18,7 +18,6 @@ BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.1-10
-BuildRequires:  gcc-c++
 Obsoletes:	libatk1.0_0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
