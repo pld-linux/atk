@@ -3,10 +3,13 @@ Summary(pl):	ATK -
 Name:		atk
 Version:	0.1
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
+Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source:		ftp://ftp.gtk.org/pub/gtk/v1.3/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gtk.org/pub/gtk/v1.3/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig
 BuildRequires:	glib-devel
 BuildRequires:	pango
@@ -21,37 +24,36 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description -l pl
 
 %package devel
-Summary:	ATK - header and development documentation.
-Summary(pl):	Pliki naglowkowe i dokumentacj.
-Group:		development/libraries
-Group(pl):	programowanie/biblioteki
+Summary:	ATK - header and development documentation
+Summary(pl):	Pliki naglowkowe i dokumentacj
+
 %description devel
+
 %description -l pl devel
 
 %package static
+Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(fr):	Development/Librairies
+Group(pl):	Programowanie/Biblioteki
 Summary:	ATK static library
 Summary(pl):	Biblioteki statyczne ATK
-Group:		development/libraries
-Group(pl):	programowanie/biblioteki
+
 %description static
+
 %description -l pl static
 
 %prep
 %setup -q
 
-
-#%patch
-
 %build
-./configure --prefix=%{_prefix}
-%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+%onfigure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT pkgconfigdir=%{_pkgconfigdir} install
 
-%post
-%postun
+%{__make} DESTDIR=$RPM_BUILD_ROOT pkgconfigdir=%{_pkgconfigdir} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
