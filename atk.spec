@@ -6,7 +6,7 @@ Version:	1.7.0
 Release:	1
 License:	GPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.6/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.7/%{name}-%{version}.tar.bz2
 # Source0-md5:	8db2e724cef58ac4cf703f75b925419a
 Patch0:		%{name}-locale-names.patch
 URL:		http://developer.gnome.org/projects/gap/
