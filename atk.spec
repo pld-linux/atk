@@ -4,6 +4,7 @@ Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.0.3
 Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
