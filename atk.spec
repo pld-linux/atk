@@ -90,7 +90,6 @@ cp /usr/share/gtk-doc/data/gtk-doc.make .
 %{__autoheader}
 %{__automake}
 %configure \
-	--enable-debug=%{?debug:yes}%{!?debug:minimum} \
 	--enable-static \
 	--enable-shared \
 	--enable-gtk-doc \
@@ -128,4 +127,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/liba*.a
+%{_libdir}/liba*.a
