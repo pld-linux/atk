@@ -7,7 +7,7 @@ Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.9/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.9/%{name}-%{version}.tar.bz2
 # Source0-md5:	7f41bd9c6dcd83c8df391dc1805be653
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf >= 2.54
@@ -20,7 +20,7 @@ BuildRequires:	libtool
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.98
-Requires:	glib2 >= 1:2.4.4
+Requires:	glib2 >= 1:2.5.7
 Obsoletes:	libatk1.0_0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -52,7 +52,7 @@ Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2-devel >= 1:2.4.4
+Requires:	glib2-devel >= 1:2.5.7
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
