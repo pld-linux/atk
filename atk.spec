@@ -3,7 +3,7 @@ Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z kompute
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.1.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.1/%{name}-%{version}.tar.bz2
