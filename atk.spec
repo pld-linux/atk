@@ -2,7 +2,7 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	GPL
 Group:		X11/Libraries
@@ -15,10 +15,10 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 2.1.3
+BuildRequires:	glib2-devel >= 2.2.0
 BuildRequires:	gtk-doc >= 0.9-4
 BuildRequires:	libtool
-BuildRequires:	pango-devel >= 1.1.4
+BuildRequires:	pango-devel >= 1.2.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.1-10
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
