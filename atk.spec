@@ -2,7 +2,7 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.3.0
+Version:	1.3.1
 Release:	1
 License:	GPL
 Group:		X11/Libraries
