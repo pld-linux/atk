@@ -9,6 +9,7 @@ License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-gtkdoc.patch
+Patch1:		%{name}-am16.patch
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
 BuildRequires:	glib2-devel >= 2.0.6
@@ -82,8 +83,14 @@ Interfaces para suporte a acessibilidade.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
+rm -f missing
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-static \
 	--enable-shared \
