@@ -17,7 +17,7 @@ BuildRequires:	diffutils
 BuildRequires:	glib2-devel >= 2.0.6
 BuildRequires:	gtk-doc >= 0.9
 BuildRequires:	pkgconfig
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libatk1.0_0
 
 %define		_prefix		/usr/X11R6
