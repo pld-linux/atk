@@ -10,11 +10,11 @@ Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.6/%{name}-%{version}.t
 # Source0-md5:	5e699af22a934ea3c1c1ed3742da0500
 Patch0:		%{name}-locale-names.patch
 URL:		http://developer.gnome.org/projects/gap/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 2.4.0
+BuildRequires:	glib2-devel >= 1:2.4.0
 BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	libtool
 BuildRequires:	perl-base
@@ -51,7 +51,7 @@ Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	glib2-devel >= 2.3.1
+Requires:	glib2-devel >= 1:2.4.0
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
@@ -123,12 +123,12 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
-%{_libdir}/liba*.la
-%attr(755,root,root) %{_libdir}/liba*.so
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_includedir}/atk*
 %{_pkgconfigdir}/atk*
 %{_gtkdocdir}/atk
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/liba*.a
+%{_libdir}/lib*.a
