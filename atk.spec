@@ -5,13 +5,6 @@ Version:	0.12
 Release:	1
 License:	GPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.gtk.org/pub/gtk/v1.3/%{name}-%{version}.tar.gz
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
@@ -34,13 +27,6 @@ PodrЙczna biblioteka funkcji udostЙpniaj╠cych.
 Summary:	ATK - header and development documentation
 Summary(pl):	Pliki nagЁСwkowe i dokumentacja
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 Requires:	glib2-devel
 Obsoletes:	libatk8-devel
@@ -55,13 +41,6 @@ ATK - pliki nagЁСwkowe i dokumentacja programisty.
 Summary:	ATK static library
 Summary(pl):	Biblioteka statyczna ATK
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
