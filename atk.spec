@@ -19,6 +19,7 @@ BuildRequires:	glib2-devel >= 1.3.12
 BuildRequires:	pango
 BuildRequires:	diffutils
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	libatk8
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
@@ -40,6 +41,8 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	glib2-devel
+Obsoletes:	libatk8-devel
 
 %description devel
 ATK - header and development documentation.
