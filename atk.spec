@@ -4,6 +4,7 @@ Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.7.3
 Release:	1
+Epoch:		1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.7/%{name}-%{version}.tar.bz2
@@ -51,7 +52,7 @@ Summary:	ATK - header and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2-devel >= 1:2.4.4
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
@@ -70,7 +71,7 @@ Summary:	ATK static library
 Summary(pl):	Biblioteka statyczna ATK
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}-%{release}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 ATK static library.
