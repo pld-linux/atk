@@ -1,0 +1,25 @@
+diff -Nru atk-1.0.3.orig/configure.in atk-1.0.3/configure.in
+--- atk-1.0.3.orig/configure.in	Wed Jul 31 23:08:01 2002
++++ atk-1.0.3/configure.in	Thu Dec 19 15:26:33 2002
+@@ -124,21 +124,6 @@
+ 
+ AC_CHECK_PROG(GTKDOC, gtkdoc-mkdb, true, false)
+ 
+-gtk_doc_min_version=0.6
+-if $GTKDOC ; then
+-    gtk_doc_version=`gtkdoc-mkdb --version`
+-    AC_MSG_CHECKING([gtk-doc version ($gtk_doc_version) >= $gtk_doc_min_version])
+-    if perl <<EOF ; then
+-	exit (("$gtk_doc_version" =~ /^[[0-9]]+\.[[0-9]]+$/) &&
+-            ("$gtk_doc_version" >= "$gtk_doc_min_version") ? 0 : 1);
+-EOF
+-      AC_MSG_RESULT(yes)
+-   else
+-      AC_MSG_RESULT(no)
+-	GTKDOC=false
+-   fi
+-fi
+-
+ dnl Disable the gtk-doc stuff by default to avoid Jade hassles
+ AC_ARG_ENABLE(gtk-doc, [  --enable-gtk-doc        use gtk-doc to build documentation [default=no]], enable_gtk_doc="$enableval", enable_gtk_doc=no)
+ 
