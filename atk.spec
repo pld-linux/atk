@@ -20,7 +20,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.1-10
 BuildRequires:  gcc-c++
 Obsoletes:	libatk1.0_0
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The ATK library provides a set of interfaces for adding accessibility
