@@ -92,7 +92,6 @@ cp /usr/share/gtk-doc/data/gtk-doc.make .
 %configure \
 	--enable-static \
 	--enable-shared \
-	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
