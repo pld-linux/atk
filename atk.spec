@@ -1,17 +1,15 @@
 
-%define		snap	20030617
-
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.3.4
-Release:	0.%{snap}
+Release:	1
 License:	GPL
 Group:		X11/Libraries
-#Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
-Source0:	%{name}-%{version}-%{snap}.tar.bz2
-# Source0-md5:	99e5829b07d3171d486b9f0d467c9b1b
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
+# Source0-md5:	228c77d00ea0d1cb43b386a1f197fdf9
+#Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf
 BuildRequires:	automake
