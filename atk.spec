@@ -3,13 +3,14 @@ Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z kompute
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.0.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
 BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	gtk-doc >= 0.9
 BuildRequires:	pango-devel >= 1.0.0
 BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -17,6 +18,7 @@ Obsoletes:	libatk1.0_0
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
+%define		_gtkdocdir	/usr/share/doc/gtk-doc/html
 
 %description
 The ATK library provides a set of interfaces for adding accessibility
@@ -81,7 +83,8 @@ Interfaces para suporte a acessibilidade.
 %configure \
 	--enable-static \
 	--enable-shared \
-	--disable-gtk-doc
+	--enable-gtk-doc \
+	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
 
@@ -90,7 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir}
+	pkgconfigdir=%{_pkgconfigdir} \
+	HTML_DIR=%{_gtkdocdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -108,7 +112,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/liba*.??
 %{_includedir}/atk*
 %{_pkgconfigdir}/atk*
-%{_datadir}/gtk-doc/html/atk
+%{_gtkdocdir}/atk
 
 %files static
 %defattr(644,root,root,755)
