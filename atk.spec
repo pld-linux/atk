@@ -1,5 +1,5 @@
 Summary:	ATK - Accessibility Toolkit
-Summary(pl):	ATK - Toolkit udostêpniaj±cy
+Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Name:		atk
 Version:	1.0.0
 Release:	1
@@ -21,7 +21,8 @@ Obsoletes:	libatk8
 Handy library of accessibility functions.
 
 %description -l pl
-Podrêczna biblioteka funkcji udostêpniaj±cych.
+Porêczna biblioteka, której stosowanie u³atwia niepe³nosprawnym korzystanie
+z komputerów.
 
 %package devel
 Summary:	ATK - header and development documentation
