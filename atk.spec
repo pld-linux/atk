@@ -3,12 +3,12 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.3.4
+Version:	1.3.5
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
-# Source0-md5:	228c77d00ea0d1cb43b386a1f197fdf9
+# Source0-md5:	0cdef24c7bac5b66a752f98b728f8e60
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf
