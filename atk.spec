@@ -2,14 +2,14 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - Toolkit udostêpniaj±cy
 Name:		atk
 Version:	1.0.0
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Libraries
-Source0:	ftp://ftp.gtk.org/pub/gtk/v1.3/testing/%{name}-rc1-%{version}.tar.gz
+Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
 BuildRequires:	glib2-devel >= 2.0.0
-BuildRequires:	pango-devel
+BuildRequires:	pango-devel >= 1.0.0
 BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libatk8
@@ -50,7 +50,7 @@ ATK static library.
 Biblioteka statyczna ATK.
 
 %prep
-%setup -q -n %{name}-rc1-%{version}
+%setup -q
 
 %build
 %configure \
