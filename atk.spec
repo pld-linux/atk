@@ -15,7 +15,7 @@ Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.gtk.org/pub/gtk/v1.3/%{name}-%{version}.tar.gz
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
-BuildRequires:	glib2-devel >= 1.3.12
+BuildRequires:	glib2-devel >= 1.3.14
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
