@@ -90,6 +90,7 @@ cp /usr/share/gtk-doc/data/gtk-doc.make .
 %{__autoheader}
 %{__automake}
 %configure \
+	--enable-debug=%{?debug:yes}%{!?debug:minimum} \
 	--enable-static \
 	--enable-shared \
 	--enable-gtk-doc \
