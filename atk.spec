@@ -6,7 +6,7 @@ Name:		atk
 %define		_minor_ver	1
 Epoch:		1
 Version:	%{_major_ver}.%{_minor_ver}
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/%{_major_ver}/%{name}-%{version}.tar.bz2
