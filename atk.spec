@@ -1,4 +1,5 @@
 Summary:	ATK - Accessibility Toolkit
+Summary(pl):	ATK - Toolkit udostÍpniaj±cy
 Name:		atk
 Version:	0.6
 Release:	1
@@ -12,6 +13,7 @@ Group(pt_BR):	Bibliotecas
 Group(ru):	‚…¬Ã…œ‘≈À…
 Group(uk):	‚¶¬Ã¶œ‘≈À…
 Source0:	ftp://ftp.gtk.org/pub/gtk/v1.3/%{name}-%{version}.tar.gz
+URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	pkgconfig
 BuildRequires:	glib2-devel >= 1.3.10
 BuildRequires:	pango
@@ -22,11 +24,14 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_mandir		%{_prefix}/man
 
 %description
-Handy library of accessability functions.
+Handy library of accessibility functions.
+
+%description -l pl
+PodrÍczna biblioteka funkcji udostÍpniaj±cych.
 
 %package devel
 Summary:	ATK - header and development documentation
-Summary(pl):	Pliki naglowkowe i dokumentacj
+Summary(pl):	Pliki nag≥Ûwkowe i dokumentacja
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -39,9 +44,12 @@ Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 %description devel
 ATK - header and development documentation.
 
+%description devel -l pl
+ATK - pliki nag≥Ûwkowe i dokumentacja programisty.
+
 %package static
 Summary:	ATK static library
-Summary(pl):	Biblioteki statyczne ATK
+Summary(pl):	Biblioteka statyczna ATK
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -54,8 +62,8 @@ Group(uk):	Úœ⁄“œ¬À¡/‚¶¬Ã¶œ‘≈À…
 %description static
 ATK static library.
 
-%description -l pl static
-Biblioteki statyczne ATK.
+%description static -l pl
+Biblioteka statyczna ATK.
 
 %prep
 %setup -q
@@ -75,11 +83,11 @@ rm -rf $RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
-
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
