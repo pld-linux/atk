@@ -1,24 +1,12 @@
-diff -Nru atk-1.1.0.orig/atk/Makefile.am atk-1.1.0/atk/Makefile.am
---- atk-1.1.0.orig/atk/Makefile.am	Thu Mar 14 21:46:44 2002
-+++ atk-1.1.0/atk/Makefile.am	Wed Oct  9 14:34:14 2002
-@@ -63,7 +63,7 @@
- 	$(atk_built_cfiles)
+diff -Nur atk-1.1.1.orig/atk/Makefile.am atk-1.1.1/atk/Makefile.am
+--- atk-1.1.1.orig/atk/Makefile.am	Wed Oct 30 16:49:24 2002
++++ atk-1.1.1/atk/Makefile.am	Tue Nov 12 18:49:47 2002
+@@ -65,7 +65,7 @@
+ EXTRA_DIST += atkmarshal.list	\
+ 		atkintl.h
  
- EXTRA_DIST += atkmarshal.list
 -MAINTAINERCLEANFILES += 	\
-+MAINTAINERCLEANFILES = 		\
++MAINTAINERCLEANFILES = 	\
  	atkmarshal.c		\
  	atkmarshal.h		\
  	stamp-atkmarshal.c	\
-diff -Nru atk-1.1.0.orig/docs/Makefile.am atk-1.1.0/docs/Makefile.am
---- atk-1.1.0.orig/docs/Makefile.am	Fri Aug 16 17:36:55 2002
-+++ atk-1.1.0/docs/Makefile.am	Wed Oct  9 14:34:25 2002
-@@ -59,7 +59,7 @@
- 
- TARGET_DIR=$(HTML_DIR)/$(DOC_MODULE)
- 
--EXTRA_DIST = 				\
-+EXTRA_DIST += 				\
- 	$(content_files)		\
- 	$(extra_files)			\
- 	$(HTML_IMAGES)			\
