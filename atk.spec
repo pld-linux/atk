@@ -93,9 +93,7 @@ Interfaces para suporte a acessibilidade.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	pkgconfigdir=%{_pkgconfigdir} \
-	HTML_DIR=%{_gtkdocdir}
+	DESTDIR=$RPM_BUILD_ROOT 
 
 %find_lang atk10
 
