@@ -111,7 +111,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/liba*.??
+%attr(755,root,root) %{_libdir}/liba*.so
+%{_libdir}/liba*.la
 %{_includedir}/atk*
 %{_pkgconfigdir}/atk*
 %{_gtkdocdir}/atk
