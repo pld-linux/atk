@@ -1,8 +1,9 @@
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
+Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.0.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
@@ -18,15 +19,27 @@ Obsoletes:	libatk1.0_0
 %define		_mandir		%{_prefix}/man
 
 %description
-Handy library of accessibility functions.
+The ATK library provides a set of interfaces for adding accessibility
+support to applications and graphical user interface toolkits. By
+supporting the ATK interfaces, an application or toolkit can be used
+as tools such as screen readers and magnifiers, and alternative input
+devices.
 
 %description -l pl
-Porêczna biblioteka, której stosowanie u³atwia niepe³nosprawnym korzystanie
-z komputerów.
+Porêczna biblioteka, której stosowanie u³atwia niepe³nosprawnym
+korzystanie z komputerów.
+
+%description -l pt_BR
+A biblioteca ATK provê um conjunto de interfaces para adicionar
+suporte a acessibilidade para aplicações e interfaces gráficas.
+Suportando a interface ATK, uma aplicação ou interface gráfica pode
+ser utilizada como ferramentas de leitura e aumento de tela,
+dispositivos de entrada alternativos, etc.
 
 %package devel
 Summary:	ATK - header and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja
+Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	glib2-devel
@@ -38,9 +51,13 @@ ATK - header and development documentation.
 %description devel -l pl
 ATK - pliki nag³ówkowe i dokumentacja programisty.
 
+%description devel -l pt_BR
+Interfaces para suporte a acessibilidade.
+
 %package static
 Summary:	ATK static library
 Summary(pl):	Biblioteka statyczna ATK
+Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -49,6 +66,9 @@ ATK static library.
 
 %description static -l pl
 Biblioteka statyczna ATK.
+
+%description static -l pt_BR
+Interfaces para suporte a acessibilidade.
 
 %prep
 %setup -q
