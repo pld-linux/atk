@@ -15,12 +15,10 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.2.0
 BuildRequires:	gtk-doc >= 0.9-4
 BuildRequires:	libtool
-BuildRequires:	pango-devel >= 1.2.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.1-10
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libatk1.0_0
-
 
 %description
 The ATK library provides a set of interfaces for adding accessibility
