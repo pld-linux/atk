@@ -11,10 +11,12 @@ Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-gtkdoc.patch
 Patch1:		%{name}-am16.patch
 URL:		http://developer.gnome.org/projects/gap/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	diffutils
-BuildRequires:	glib2-devel >= 2.0.6
 BuildRequires:	gtk-doc >= 0.9
-BuildRequires:	pango-devel >= 1.0.4
+BuildRequires:	libtool
+BuildRequires:	pango-devel
 BuildRequires:	pkgconfig
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	libatk1.0_0
@@ -51,7 +53,7 @@ Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	glib2-devel
+Requires:	pango-devel
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
