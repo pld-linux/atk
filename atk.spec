@@ -90,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%attr(644,root,root) %{_includedir}/atk*
+%{_includedir}/atk*
 %attr(644,root,root) %{_pkgconfigdir}/atk*
 %{_datadir}/gtk-doc/html/atk
 
