@@ -2,20 +2,22 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.4.1
-Release:	2
+Version:	1.6.0
+Release:	1
 License:	GPL
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.4/%{name}-%{version}.tar.bz2
-# Source0-md5:	d7830bdf1e05d8395794f75097d291be
+Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.6/%{name}-%{version}.tar.bz2
+# Source0-md5:	5e699af22a934ea3c1c1ed3742da0500
+Patch0:		%{name}-locale-names.patch
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 2.2.3
+BuildRequires:	glib2-devel >= 2.4.0
 BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	libtool
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.1-10
 Obsoletes:	libatk1.0_0
@@ -48,8 +50,8 @@ Summary:	ATK - header and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
-Requires:	glib2-devel >= 2.2.3
+Requires:	%{name} = %{version}-%{release}
+Requires:	glib2-devel >= 2.3.1
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
@@ -67,7 +69,7 @@ Summary:	ATK static library
 Summary(pl):	Biblioteka statyczna ATK
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 ATK static library.
@@ -80,9 +82,12 @@ Interfaces para suporte a acessibilidade.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
-cp /usr/share/gtk-doc/data/gtk-doc.make .
+gtkdocize --copy
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
@@ -91,6 +96,7 @@ cp /usr/share/gtk-doc/data/gtk-doc.make .
 %configure \
 	--enable-static \
 	--enable-shared \
+	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
