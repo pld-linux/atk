@@ -3,11 +3,16 @@ Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z kompute
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.0.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	9041396017f8207b8aa2bece27eb5ebb
+Patch0:		%{name}-gtkdoc.patch
+Patch1:		%{name}-am16.patch
 URL:		http://developer.gnome.org/projects/gap/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	glib2-devel >= 2.0.6
 BuildRequires:	gtk-doc >= 0.9
@@ -50,6 +55,7 @@ Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	glib2-devel
 Requires:	gtk-doc-common
+Requires:	pango-devel
 Obsoletes:	libatk1.0_0-devel
 
 %description devel
@@ -79,8 +85,15 @@ Interfaces para suporte a acessibilidade.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
+rm -f missing
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
 %configure \
 	--enable-static \
 	--enable-shared \
@@ -110,7 +123,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/liba*.??
+%attr(755,root,root) %{_libdir}/liba*.so
+%{_libdir}/liba*.la
 %{_includedir}/atk*
 %{_pkgconfigdir}/atk*
 %{_gtkdocdir}/atk
