@@ -2,12 +2,13 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.5.4
+Version:	1.5.5
 Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.5/%{name}-%{version}.tar.bz2
-# Source0-md5:	3d0fd2f8d5dcb87f47ec1624f7da7484
+# Source0-md5:	f2182c6b838c583bdac0022fea82b5b9
+Patch0:		%{name}-locale-names.patch
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -16,6 +17,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 2.3.1
 BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	libtool
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-build >= 4.1-10
 Obsoletes:	libatk1.0_0
@@ -48,7 +50,7 @@ Summary:	ATK - header and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel >= 2.3.1
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
@@ -67,7 +69,7 @@ Summary:	ATK static library
 Summary(pl):	Biblioteka statyczna ATK
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 ATK static library.
@@ -80,6 +82,9 @@ Interfaces para suporte a acessibilidade.
 
 %prep
 %setup -q
+%patch0 -p1
+
+mv po/{no,nb}.po
 
 %build
 gtkdocize --copy
@@ -91,6 +96,7 @@ gtkdocize --copy
 %configure \
 	--enable-static \
 	--enable-shared \
+	--enable-gtk-doc \
 	--with-html-dir=%{_gtkdocdir}
 
 %{__make}
