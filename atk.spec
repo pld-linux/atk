@@ -1,7 +1,7 @@
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - Toolkit udostêpniaj±cy
 Name:		atk
-Version:	0.6
+Version:	0.8
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -96,12 +96,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%attr(755,root,root) %{_libdir}/liba*.??
 %{_includedir}/atk*
 %attr(644,root,root) %{_pkgconfigdir}/atk*
 %{_datadir}/gtk-doc/html/atk
 
 %files static
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/lib*.a
+%attr(644,root,root) %{_libdir}/liba*.a
