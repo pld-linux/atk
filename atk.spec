@@ -8,6 +8,7 @@ Epoch:		1
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-gtkdoc.patch
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
 BuildRequires:	glib2-devel >= 2.0.6
@@ -80,6 +81,7 @@ Interfaces para suporte a acessibilidade.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
