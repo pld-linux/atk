@@ -1,0 +1,12 @@
+diff -urN aa/atk-1.5.5/configure.in atk-1.5.5/configure.in
+--- aa/atk-1.5.5/configure.in	2004-02-24 14:37:42.000000000 +0100
++++ atk-1.5.5/configure.in	2004-02-24 15:28:38.582691744 +0100
+@@ -151,7 +151,7 @@
+ # Rerun PKG_CONFIG to add gthread-2.0 cflags, but not libs
+ DEP_CFLAGS=`$PKG_CONFIG --cflags $GLIB_PACKAGES gthread-2.0`
+ 
+-ALL_LINGUAS="af am az be bg bn ca cs cy da de en_CA en_GB el eo es fa fi fr ga he hi hr hu kn ko id is it ja li lv lt ml mk mn ms ne nl nn no pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta tr uk vi yi zh_CN zh_TW"
++ALL_LINGUAS="af am az be bg bn ca cs cy da de en_CA en_GB el eo es fa fi fr ga he hi hr hu kn ko id is it ja li lv lt ml mk mn ms nb ne nl nn pl pt pt_BR ro ru sk sl sq sr sr@Latn sv ta tr uk vi yi zh_CN zh_TW"
+ AM_GLIB_GNU_GETTEXT
+ 
+ AM_GLIB_DEFINE_LOCALEDIR(ATK_LOCALEDIR)
