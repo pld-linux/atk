@@ -14,7 +14,7 @@ BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.4.4
+BuildRequires:	glib2-devel >= 1:2.5.7
 BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	libtool
 BuildRequires:	perl-base
