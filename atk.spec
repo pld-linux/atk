@@ -7,6 +7,7 @@ Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{name}/1.3/%{name}-%{version}.tar.bz2
+# Source0-md5: 244a4b2573c0962c9638a3f54f8fe6f4
 Patch0:		%{name}-locale-sr.patch
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf
