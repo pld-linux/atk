@@ -19,7 +19,7 @@ BuildRequires:	gtk-doc >= 1.1
 BuildRequires:	libtool
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-BuildRequires:	rpm-build >= 4.1-10
+BuildRequires:	rpmbuild(macros) >= 1.98
 Requires:	glib2 >= 1:2.4.4
 Obsoletes:	libatk1.0_0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
