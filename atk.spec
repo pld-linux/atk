@@ -5,7 +5,7 @@ Name:		atk
 Version:	1.0.2
 Release:	1
 License:	GPL
-Group:		Libraries
+Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	diffutils
@@ -26,8 +26,12 @@ as tools such as screen readers and magnifiers, and alternative input
 devices.
 
 %description -l pl
-Porêczna biblioteka, której stosowanie u³atwia niepe³nosprawnym
-korzystanie z komputerów.
+Biblioteka ATK udostêpnia zestaw interfejsów u³atwiaj±cych
+niepe³nosprawnym korzystanie z aplikacji i poszczególnych elementów
+graficznego interfejsu u¿ytkownika. Poprzez wykorzystanie interfejsów
+ATK, aplikacja lub element interfejsu mo¿e byæ u¿ywany z takimi
+narzêdziami jak czytniki ekranu i narzêdzia powiêkszaj±ce oraz
+alternatywnymi urz±dzeniami wej¶ciowymi.
 
 %description -l pt_BR
 A biblioteca ATK provê um conjunto de interfaces para adicionar
@@ -40,7 +44,7 @@ dispositivos de entrada alternativos, etc.
 Summary:	ATK - header and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	glib2-devel
 Obsoletes:	libatk1.0_0-devel
@@ -58,7 +62,7 @@ Interfaces para suporte a acessibilidade.
 Summary:	ATK static library
 Summary(pl):	Biblioteka statyczna ATK
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
-Group:		Development/Libraries
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -88,8 +92,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-gzip -9nf AUTHORS ChangeLog NEWS README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -98,7 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
