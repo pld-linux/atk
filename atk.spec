@@ -3,7 +3,7 @@ Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z kompute
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.0.2
-Release:	3
+Release:	4
 License:	GPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.gtk.org/pub/gtk/v2.0/%{name}-%{version}.tar.bz2
@@ -18,7 +18,7 @@ Obsoletes:	libatk1.0_0
 
 %define		_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
-%define		_gtkdocdir	/usr/share/doc/gtk-doc/html
+%define		_gtkdocdir	%{_defaultdocdir}/gtk-doc/html
 
 %description
 The ATK library provides a set of interfaces for adding accessibility
@@ -49,6 +49,7 @@ Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
 Requires:	glib2-devel
+Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
 %description devel
