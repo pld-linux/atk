@@ -2,7 +2,7 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - Toolkit udostЙpniaj╠cy
 Name:		atk
 Version:	0.8
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries
 Group(de):	Libraries
@@ -41,6 +41,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	%{name} = %{version}
 Requires:	glib2-devel
 Obsoletes:	libatk8-devel
 
@@ -61,6 +62,7 @@ Group(pl):	Programowanie/Biblioteki
 Group(pt_BR):	Desenvolvimento/Bibliotecas
 Group(ru):	Разработка/Библиотеки
 Group(uk):	Розробка/Б╕бл╕отеки
+Requires:	%{name}-devel = %{version}
 
 %description static
 ATK static library.
