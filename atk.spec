@@ -16,7 +16,7 @@ BuildRequires:	diffutils
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.6.3
 BuildRequires:	gtk-doc >= 1.1
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
