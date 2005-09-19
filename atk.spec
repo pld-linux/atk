@@ -1,3 +1,5 @@
+%bcond_without apidocs
+%bcond_without static_libs
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
@@ -15,7 +17,7 @@ BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.8.1
-BuildRequires:	gtk-doc >= 1.4
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.4}
 BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
@@ -92,10 +94,11 @@ Interfaces para suporte a acessibilidade.
 %{__autoheader}
 %{__automake}
 %configure \
-	--enable-gtk-doc \
-	--enable-shared \
-	--enable-static \
-	--with-html-dir=%{_gtkdocdir}
+	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
+	%{?with_apidocs:--with-html-dir=%{_gtkdocdir}} \
+	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static \
+	--enable-shared
+
 %{__make}
 
 %install
@@ -122,12 +125,16 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
+%if %{with apidocs}
 %{_gtkdocdir}/atk
+%endif
 %{_includedir}/atk*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_pkgconfigdir}/atk*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
