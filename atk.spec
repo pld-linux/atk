@@ -21,6 +21,7 @@ BuildRequires:	diffutils
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.8.1
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.4}
+BuildRequires:	gtk-doc-automake >= 1.4
 BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
