@@ -1,5 +1,8 @@
-%bcond_without apidocs
-%bcond_without static_libs
+#
+# Conditional build:
+%bcond_without	apidocs		# disable gtk-doc
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
@@ -125,13 +128,13 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
+%attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
+%{_includedir}/atk*
+%{_pkgconfigdir}/atk*
 %if %{with apidocs}
 %{_gtkdocdir}/atk
 %endif
-%{_includedir}/atk*
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_pkgconfigdir}/atk*
 
 %if %{with static_libs}
 %files static
