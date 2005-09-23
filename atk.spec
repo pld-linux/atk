@@ -87,7 +87,7 @@ Interfaces para suporte a acessibilidade.
 %setup -q
 
 %build
-%{__gtkdocize}
+%{?with_apidocs:%{__gtkdocize}}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
