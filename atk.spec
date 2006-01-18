@@ -7,13 +7,13 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.10.3
+Version:	1.11.2
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	c84a01fea567b365c0d44b227fead948
+Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	fd1f2349ece8a63257c7ffedfa6316af
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -87,6 +87,18 @@ Biblioteka statyczna ATK.
 %description static -l pt_BR
 Interfaces para suporte a acessibilidade.
 
+%package apidocs
+Summary:	ATK API documentation
+Summary(pl):	Dokumentacja API ATK
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+ATK API documentation.
+
+%description apidocs -l pl
+Dokumentacja API ATK.
+
 %prep
 %setup -q
 
@@ -141,4 +153,10 @@ rm -rf $RPM_BUILD_ROOT
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
+
+%if %{with apidocs}
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/atk
 %endif
