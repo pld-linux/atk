@@ -1,21 +1,27 @@
+#
+# Conditional build:
+%bcond_without	apidocs		# disable gtk-doc
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.10.3
+Version:	1.11.4
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.10/%{name}-%{version}.tar.bz2
-# Source0-md5:	c84a01fea567b365c0d44b227fead948
+Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.11/%{name}-%{version}.tar.bz2
+# Source0-md5:	2f7132e46a62a2586545bca40eeeef39
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.8.1
-BuildRequires:	gtk-doc >= 1.4
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.4}
+BuildRequires:	gtk-doc-automake >= 1.4
 BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
@@ -81,21 +87,34 @@ Biblioteka statyczna ATK.
 %description static -l pt_BR
 Interfaces para suporte a acessibilidade.
 
+%package apidocs
+Summary:	ATK API documentation
+Summary(pl):	Dokumentacja API ATK
+Group:		Documentation
+Requires:	gtk-doc-common
+
+%description apidocs
+ATK API documentation.
+
+%description apidocs -l pl
+Dokumentacja API ATK.
+
 %prep
 %setup -q
 
 %build
-%{__gtkdocize}
+%{?with_apidocs:%{__gtkdocize}}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
-	--enable-gtk-doc \
-	--enable-shared \
-	--enable-static \
-	--with-html-dir=%{_gtkdocdir}
+	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
+	%{?with_apidocs:--with-html-dir=%{_gtkdocdir}} \
+	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static \
+	--enable-shared
+
 %{__make}
 
 %install
@@ -122,12 +141,22 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
-%{_gtkdocdir}/atk
-%{_includedir}/atk*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
+%{_includedir}/atk*
 %{_pkgconfigdir}/atk*
+%if %{with apidocs}
+%{_gtkdocdir}/atk
+%endif
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
+
+%if %{with apidocs}
+%files apidocs
+%defattr(644,root,root,755)
+%{_gtkdocdir}/atk
+%endif
