@@ -8,7 +8,7 @@ Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z kompute
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.11.4
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -19,14 +19,14 @@ BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.8.1
-%{?with_apidocs:BuildRequires:	gtk-doc >= 1.4}
-BuildRequires:	gtk-doc-automake >= 1.4
+BuildRequires:	glib2-devel >= 1:2.12.0
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.6}
+BuildRequires:	gtk-doc-automake >= 1.6
 BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires:	glib2 >= 1:2.6.3
+Requires:	glib2 >= 1:2.12.0
 Obsoletes:	libatk1.0_0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,7 +58,7 @@ Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2-devel >= 1:2.8.1
+Requires:	glib2-devel >= 1:2.12.0
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
@@ -109,6 +109,7 @@ Dokumentacja API ATK.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
 	%{?with_apidocs:--with-html-dir=%{_gtkdocdir}} \
