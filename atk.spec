@@ -7,26 +7,26 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z komputerów
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.12.2
+Version:	1.12.3
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	c753b04801c6c3334a9e0ec54551ace4
+# Source0-md5:	7f648f4808b5f8273e1d63b0b543bf9b
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.12.2
+BuildRequires:	glib2-devel >= 1:2.12.4
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.7}
 BuildRequires:	gtk-doc-automake >= 1.7
 BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires:	glib2 >= 1:2.12.2
+Requires:	glib2 >= 1:2.12.4
 Obsoletes:	libatk1.0_0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,7 +58,7 @@ Summary(pl):	Pliki nag³ówkowe i dokumentacja
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2-devel >= 1:2.12.2
+Requires:	glib2-devel >= 1:2.12.4
 Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
