@@ -8,7 +8,7 @@ Summary(pl):	ATK - biblioteka u³atwiaj±ca niepe³nosprawnym korzystanie z kompute
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.12.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -53,20 +53,19 @@ ser utilizada como ferramentas de leitura e aumento de tela,
 dispositivos de entrada alternativos, etc.
 
 %package devel
-Summary:	ATK - header and development documentation
-Summary(pl):	Pliki nag³ówkowe i dokumentacja
+Summary:	ATK - header files
+Summary(pl):	ATK - pliki nag³ówkowe
 Summary(pt_BR):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2-devel >= 1:2.12.4
-Requires:	gtk-doc-common
 Obsoletes:	libatk1.0_0-devel
 
 %description devel
-ATK - header and development documentation.
+ATK - header files.
 
 %description devel -l pl
-ATK - pliki nag³ówkowe i dokumentacja programisty.
+ATK - pliki nag³ówkowe.
 
 %description devel -l pt_BR
 Interfaces para suporte a acessibilidade.
@@ -143,9 +142,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/lib*.la
 %{_includedir}/atk*
 %{_pkgconfigdir}/atk*
-%if %{with apidocs}
-%{_gtkdocdir}/atk
-%endif
 
 %if %{with static_libs}
 %files static
