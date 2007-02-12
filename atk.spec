@@ -4,8 +4,8 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	ATK - Accessibility Toolkit
-Summary(pl):	ATK - biblioteka u≥atwiaj±ca niepe≥nosprawnym korzystanie z komputerÛw
-Summary(pt_BR):	Interfaces para suporte a acessibilidade
+Summary(pl.UTF-8):   ATK - biblioteka u≈ÇatwiajƒÖca niepe≈Çnosprawnym korzystanie z komputer√≥w
+Summary(pt_BR.UTF-8):   Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.12.4
 Release:	2
@@ -37,25 +37,25 @@ supporting the ATK interfaces, an application or toolkit can be used
 as tools such as screen readers and magnifiers, and alternative input
 devices.
 
-%description -l pl
-Biblioteka ATK udostÍpnia zestaw interfejsÛw u≥atwiaj±cych
-niepe≥nosprawnym korzystanie z aplikacji i poszczegÛlnych elementÛw
-graficznego interfejsu uøytkownika. Poprzez wykorzystanie interfejsÛw
-ATK, aplikacja lub element interfejsu moøe byÊ uøywany z takimi
-narzÍdziami jak czytniki ekranu i narzÍdzia powiÍkszaj±ce oraz
-alternatywnymi urz±dzeniami wej∂ciowymi.
+%description -l pl.UTF-8
+Biblioteka ATK udostƒôpnia zestaw interfejs√≥w u≈ÇatwiajƒÖcych
+niepe≈Çnosprawnym korzystanie z aplikacji i poszczeg√≥lnych element√≥w
+graficznego interfejsu u≈ºytkownika. Poprzez wykorzystanie interfejs√≥w
+ATK, aplikacja lub element interfejsu mo≈ºe byƒá u≈ºywany z takimi
+narzƒôdziami jak czytniki ekranu i narzƒôdzia powiƒôkszajƒÖce oraz
+alternatywnymi urzƒÖdzeniami wej≈õciowymi.
 
-%description -l pt_BR
-A biblioteca ATK provÍ um conjunto de interfaces para adicionar
-suporte a acessibilidade para aplicaÁıes e interfaces gr·ficas.
-Suportando a interface ATK, uma aplicaÁ„o ou interface gr·fica pode
+%description -l pt_BR.UTF-8
+A biblioteca ATK prov√™ um conjunto de interfaces para adicionar
+suporte a acessibilidade para aplica√ß√µes e interfaces gr√°ficas.
+Suportando a interface ATK, uma aplica√ß√£o ou interface gr√°fica pode
 ser utilizada como ferramentas de leitura e aumento de tela,
 dispositivos de entrada alternativos, etc.
 
 %package devel
 Summary:	ATK - header files
-Summary(pl):	ATK - pliki nag≥Ûwkowe
-Summary(pt_BR):	Interfaces para suporte a acessibilidade
+Summary(pl.UTF-8):   ATK - pliki nag≈Ç√≥wkowe
+Summary(pt_BR.UTF-8):   Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2-devel >= 1:2.12.4
@@ -64,38 +64,38 @@ Obsoletes:	libatk1.0_0-devel
 %description devel
 ATK - header files.
 
-%description devel -l pl
-ATK - pliki nag≥Ûwkowe.
+%description devel -l pl.UTF-8
+ATK - pliki nag≈Ç√≥wkowe.
 
-%description devel -l pt_BR
+%description devel -l pt_BR.UTF-8
 Interfaces para suporte a acessibilidade.
 
 %package static
 Summary:	ATK static library
-Summary(pl):	Biblioteka statyczna ATK
-Summary(pt_BR):	Interfaces para suporte a acessibilidade
+Summary(pl.UTF-8):   Biblioteka statyczna ATK
+Summary(pt_BR.UTF-8):   Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 ATK static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna ATK.
 
-%description static -l pt_BR
+%description static -l pt_BR.UTF-8
 Interfaces para suporte a acessibilidade.
 
 %package apidocs
 Summary:	ATK API documentation
-Summary(pl):	Dokumentacja API ATK
+Summary(pl.UTF-8):   Dokumentacja API ATK
 Group:		Documentation
 Requires:	gtk-doc-common
 
 %description apidocs
 ATK API documentation.
 
-%description apidocs -l pl
+%description apidocs -l pl.UTF-8
 Dokumentacja API ATK.
 
 %prep
