@@ -4,8 +4,8 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	ATK - Accessibility Toolkit
-Summary(pl.UTF-8):   ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
-Summary(pt_BR.UTF-8):   Interfaces para suporte a acessibilidade
+Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
+Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.12.4
 Release:	2
@@ -54,8 +54,8 @@ dispositivos de entrada alternativos, etc.
 
 %package devel
 Summary:	ATK - header files
-Summary(pl.UTF-8):   ATK - pliki nagłówkowe
-Summary(pt_BR.UTF-8):   Interfaces para suporte a acessibilidade
+Summary(pl.UTF-8):	ATK - pliki nagłówkowe
+Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2-devel >= 1:2.12.4
@@ -72,8 +72,8 @@ Interfaces para suporte a acessibilidade.
 
 %package static
 Summary:	ATK static library
-Summary(pl.UTF-8):   Biblioteka statyczna ATK
-Summary(pt_BR.UTF-8):   Interfaces para suporte a acessibilidade
+Summary(pl.UTF-8):	Biblioteka statyczna ATK
+Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
@@ -88,7 +88,7 @@ Interfaces para suporte a acessibilidade.
 
 %package apidocs
 Summary:	ATK API documentation
-Summary(pl.UTF-8):   Dokumentacja API ATK
+Summary(pl.UTF-8):	Dokumentacja API ATK
 Group:		Documentation
 Requires:	gtk-doc-common
 
