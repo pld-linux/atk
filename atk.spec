@@ -7,26 +7,26 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.12.4
-Release:	2
+Version:	1.17.0
+Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.12/%{name}-%{version}.tar.bz2
-# Source0-md5:	0a2c6a7bbc380e3a3d94e9061f76a849
+Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.17/%{name}-%{version}.tar.bz2
+# Source0-md5:	ee78541fb21e8e90f42999efda5b9900
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	diffutils
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.12.4
-%{?with_apidocs:BuildRequires:	gtk-doc >= 1.7}
-BuildRequires:	gtk-doc-automake >= 1.7
+BuildRequires:	glib2-devel >= 1:2.12.9
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.8}
+BuildRequires:	gtk-doc-automake >= 1.8
 BuildRequires:	libtool >= 2:1.5.16
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
-Requires:	glib2 >= 1:2.12.4
+Requires:	glib2 >= 1:2.12.9
 Obsoletes:	libatk1.0_0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -58,7 +58,7 @@ Summary(pl.UTF-8):	ATK - pliki nagłówkowe
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2-devel >= 1:2.12.4
+Requires:	glib2-devel >= 1:2.12.9
 Obsoletes:	libatk1.0_0-devel
 
 %description devel
@@ -121,6 +121,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/be\@latin
 
 %find_lang atk10
 
