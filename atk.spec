@@ -12,7 +12,7 @@ Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/atk/1.18/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/1.18/%{name}-%{version}.tar.bz2
 # Source0-md5:	9fc33ec48fd32933f7f630479dfad667
 URL:		http://developer.gnome.org/projects/gap/
 BuildRequires:	autoconf >= 2.54
