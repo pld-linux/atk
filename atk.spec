@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie 
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.20.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -27,6 +27,8 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
 Requires:	glib2 >= 1:2.14.1
 Obsoletes:	libatk1.0_0
+# sr@Latn vs. sr@latin
+Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -121,6 +123,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+[ -d $RPM_BUILD_ROOT%{_datadir}/locale/sr@latin ] || \
+	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang atk10
 
 %clean
