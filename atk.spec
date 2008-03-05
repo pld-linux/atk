@@ -111,7 +111,7 @@ Dokumentacja API ATK.
 %{__automake}
 %configure \
 	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
-	%{?with_apidocs:--with-html-dir=%{_gtkdocdir}} \
+	--with-html-dir=%{_gtkdocdir} \
 	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static \
 	--enable-shared
 
@@ -127,6 +127,8 @@ rm -rf $RPM_BUILD_ROOT
 	mv -f $RPM_BUILD_ROOT%{_datadir}/locale/sr@{Latn,latin}
 %find_lang atk10
 
+%{!?with_apidocs:rm -rf $RPM_BUILD_ROOT%{_gtkdocdir}/atk}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -137,6 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %ghost %{_libdir}/libatk-1.0.so.0
 
 %files devel
 %defattr(644,root,root,755)
