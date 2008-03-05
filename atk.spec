@@ -138,21 +138,21 @@ rm -rf $RPM_BUILD_ROOT
 %files -f atk10.lang
 %defattr(644,root,root,755)
 %doc AUTHORS NEWS README
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libatk-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libatk-1.0.so.0
 
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/atk*
-%{_pkgconfigdir}/atk*
+%attr(755,root,root) %{_libdir}/libatk-1.0.so
+%{_libdir}/libatk-1.0.la
+%{_includedir}/atk-1.0
+%{_pkgconfigdir}/atk.pc
 
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libatk-1.0.a
 %endif
 
 %if %{with apidocs}
