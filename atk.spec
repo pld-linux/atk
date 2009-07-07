@@ -14,7 +14,7 @@ License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/1.26/%{name}-%{version}.tar.bz2
 # Source0-md5:	719229408019c548855673840679f156
-URL:		http://developer.gnome.org/projects/gap/
+URL:		http://library.gnome.org/devel/atk/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	gettext-devel
