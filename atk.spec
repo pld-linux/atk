@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie 
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.28.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -121,6 +121,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/ca@valencia
 
 %find_lang atk10
 
