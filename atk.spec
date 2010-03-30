@@ -7,18 +7,19 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.28.0
-Release:	2
+Version:	1.30.0
+Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/1.28/%{name}-%{version}.tar.bz2
-# Source0-md5:	010a85478adc053c016a0a5c9bb52004
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/1.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	548d413775819fef425410739041cac3
 URL:		http://library.gnome.org/devel/atk/
-BuildRequires:	autoconf >= 2.54
+BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
+BuildRequires:	gobject-introspection-devel >= 0.6.7
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.8}
 BuildRequires:	gtk-doc-automake >= 1.8
 BuildRequires:	libtool >= 2:1.5.16
@@ -101,15 +102,18 @@ Dokumentacja API ATK.
 
 %prep
 %setup -q
+sed -i 's/^en@shaw//' po/LINGUAS
+rm po/en@shaw.po
 
 %build
 %{?with_apidocs:%{__gtkdocize}}
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
+	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
 	--with-html-dir=%{_gtkdocdir} \
 	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static \
 	--enable-shared
@@ -121,8 +125,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/ca@valencia
 
 %find_lang atk10
 
@@ -139,11 +141,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS NEWS README
 %attr(755,root,root) %{_libdir}/libatk-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libatk-1.0.so.0
+%{_libdir}/girepository-1.0/Atk-1.0.typelib
 
 %files devel
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/libatk-1.0.so
+%{_datadir}/gir-1.0/Atk-1.0.gir
 %{_libdir}/libatk-1.0.la
 %{_includedir}/atk-1.0
 %{_pkgconfigdir}/atk.pc
