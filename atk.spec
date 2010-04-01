@@ -147,10 +147,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/libatk-1.0.so
-%{_datadir}/gir-1.0/Atk-1.0.gir
 %{_libdir}/libatk-1.0.la
 %{_includedir}/atk-1.0
 %{_pkgconfigdir}/atk.pc
+%{_datadir}/gir-1.0/Atk-1.0.gir
 
 %if %{with static_libs}
 %files static
