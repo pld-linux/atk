@@ -17,6 +17,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/1.30/%{name}-%{version}.tar.
 URL:		http://library.gnome.org/devel/atk/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake
+BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
 BuildRequires:	gobject-introspection-devel >= 0.6.7
