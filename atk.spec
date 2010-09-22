@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie 
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	1.30.0
-Release:	2
+Release:	3
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -20,7 +20,7 @@ BuildRequires:	automake
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
-BuildRequires:	gobject-introspection-devel >= 0.6.7
+BuildRequires:	gobject-introspection-devel >= 0.9.5
 %{?with_apidocs:BuildRequires:	gtk-doc >= 1.8}
 BuildRequires:	gtk-doc-automake >= 1.8
 BuildRequires:	libtool >= 2:1.5.16
