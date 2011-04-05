@@ -7,23 +7,23 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	1.32.0
+Version:	2.0.0
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/1.32/%{name}-%{version}.tar.bz2
-# Source0-md5:	b9a19a3e426cd9ca930f0108c4ee343f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	f9a0efa29c38c9a35ec83b7f460fce9b
 URL:		http://library.gnome.org/devel/atk/
-BuildRequires:	autoconf >= 2.62
-BuildRequires:	automake
+BuildRequires:	autoconf >= 2.63
+BuildRequires:	automake >= 1:1.10
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.20.0
-BuildRequires:	gobject-introspection-devel >= 0.9.5
-%{?with_apidocs:BuildRequires:	gtk-doc >= 1.8}
-BuildRequires:	gtk-doc-automake >= 1.8
-BuildRequires:	libtool >= 2:1.5.16
+BuildRequires:	gobject-introspection-devel >= 0.10.0
+%{?with_apidocs:BuildRequires:	gtk-doc >= 1.13}
+BuildRequires:	gtk-doc-automake >= 1.13
+BuildRequires:	libtool >= 2:2.2
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.197
@@ -112,9 +112,10 @@ Dokumentacja API ATK.
 %{__autoheader}
 %{__automake}
 %configure \
-	--%{?with_apidocs:en}%{!?with_apidocs:dis}able-gtk-doc \
+	--disable-silent-rules \
+	%{__enable_disable apidocs gtk-doc} \
 	--with-html-dir=%{_gtkdocdir} \
-	--%{?with_static_libs:en}%{!?with_static_libs:dis}able-static \
+	%{__enable_disable static_libs static} \
 	--enable-shared
 
 %{__make}
@@ -124,6 +125,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libatk-1.0.la
 
 %find_lang atk10
 
@@ -146,7 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog
 %attr(755,root,root) %{_libdir}/libatk-1.0.so
-%{_libdir}/libatk-1.0.la
 %{_includedir}/atk-1.0
 %{_pkgconfigdir}/atk.pc
 %{_datadir}/gir-1.0/Atk-1.0.gir
