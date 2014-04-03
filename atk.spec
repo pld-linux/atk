@@ -2,13 +2,13 @@
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
 %bcond_without	static_libs	# don't build static library
-#
+
 Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	2.12.0
-Release:	1
+Release:	2
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
@@ -98,6 +98,9 @@ Summary:	ATK API documentation
 Summary(pl.UTF-8):	Dokumentacja API ATK
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 ATK API documentation.
@@ -134,7 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{!?with_apidocs:rm -rf $RPM_BUILD_ROOT%{_gtkdocdir}/atk}
 
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{sr@ije,sr@ijekavian}
+%{__mv} $RPM_BUILD_ROOT%{_localedir}/{sr@ije,sr@ijekavian}
 
 %find_lang atk10
 
