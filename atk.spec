@@ -18,7 +18,7 @@ URL:		https://developer.gnome.org/atk/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32.0
 BuildRequires:	gnome-common
 BuildRequires:	gobject-introspection-devel >= 0.10.0
