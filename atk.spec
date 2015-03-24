@@ -29,6 +29,7 @@ BuildRequires:	gtk-doc-automake >= 1.13
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
+BuildRequires:	python >= 1:2.5
 BuildRequires:	rpmbuild(macros) >= 1.197
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
