@@ -7,20 +7,19 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	2.16.0
+Version:	2.18.0
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.16/%{name}-%{version}.tar.xz
-# Source0-md5:	c7c5002bd6e58b4723a165f1bf312116
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.18/%{name}-%{version}.tar.xz
+# Source0-md5:	fd3678f35004b4c92e3da39356996054
 URL:		https://developer.gnome.org/atk/
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.32.0
-BuildRequires:	gnome-common
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 %if %{with apidocs}
 BuildRequires:	gtk-doc >= 1.13
