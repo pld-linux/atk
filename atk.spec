@@ -20,6 +20,9 @@ BuildRequires:	automake >= 1:1.10
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.19.2
 BuildRequires:	glib2-devel >= 1:2.32.0
+%if %(locale -a | grep -q '^C\.UTF-8$'; echo $?)
+BuildRequires:	glibc-localedb-all
+%endif
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 %if %{with apidocs}
 BuildRequires:	gtk-doc >= 1.13
@@ -126,6 +129,8 @@ Dokumentacja API ATK.
 	%{__enable_disable static_libs static} \
 	--enable-shared
 
+# gtk-doc require UTF-8 locale
+LC_ALL=C.UTF-8 \
 %{__make}
 
 %install
