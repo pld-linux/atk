@@ -16,17 +16,17 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.26/%{name}-%{version}.tar.
 # Source0-md5:	7cddcc313b9a3efd19b2ddf079ba68f5
 URL:		https://developer.gnome.org/atk/
 BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.10
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.19.2
 BuildRequires:	glib2-devel >= 1:2.32.0
 %if %(locale -a | grep -q '^C\.UTF-8$'; echo $?)
 BuildRequires:	glibc-localedb-all
 %endif
-BuildRequires:	gobject-introspection-devel >= 0.10.0
+BuildRequires:	gobject-introspection-devel >= 1.32.0
 %if %{with apidocs}
-BuildRequires:	gtk-doc >= 1.13
-BuildRequires:	gtk-doc-automake >= 1.13
+BuildRequires:	gtk-doc >= 1.25
+BuildRequires:	gtk-doc-automake >= 1.25
 %endif
 BuildRequires:	libtool >= 2:2.2
 BuildRequires:	perl-base
