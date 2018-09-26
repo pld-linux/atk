@@ -7,32 +7,30 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	2.28.1
+Version:	2.30.0
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.28/%{name}-%{version}.tar.xz
-# Source0-md5:	dfb5e7474220afa3f4ca7e45af9f3a11
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.30/%{name}-%{version}.tar.xz
+# Source0-md5:	769c85005d392ad17ffbc063f2d26454
 URL:		https://developer.gnome.org/atk/
-BuildRequires:	autoconf >= 2.63
-BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.19.2
 BuildRequires:	glib2-devel >= 1:2.32.0
-%if %(locale -a | grep -q '^C\.UTF-8$'; echo $?)
+%if %(locale -a | grep -q '^C\.utf8$'; echo $?)
 BuildRequires:	glibc-localedb-all
 %endif
 BuildRequires:	gobject-introspection-devel >= 1.32.0
 %if %{with apidocs}
 BuildRequires:	gtk-doc >= 1.25
-BuildRequires:	gtk-doc-automake >= 1.25
 %endif
-BuildRequires:	libtool >= 2:2.2
-BuildRequires:	perl-base
+BuildRequires:	meson >= 0.46.0
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	python >= 1:2.5
-BuildRequires:	rpmbuild(macros) >= 1.197
+BuildRequires:	rpmbuild(macros) >= 1.728
+BuildRequires:	sed >= 4.0
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.32.0
@@ -115,31 +113,20 @@ Dokumentacja API ATK.
 %prep
 %setup -q
 
-%build
-%{?with_apidocs:%{__gtkdocize}}
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-silent-rules \
-	%{__enable_disable apidocs gtk-doc} \
-	--with-html-dir=%{_gtkdocdir} \
-	%{__enable_disable static_libs static} \
-	--enable-shared
+%if %{with static_libs}
+%{__sed} -i -e '/^libatk/ s/shared_library/library/' atk/meson.build
+%endif
 
-# gtk-doc require UTF-8 locale
-LC_ALL=C.UTF-8 \
-%{__make}
+%build
+%meson build \
+	-Ddocs=%{__true_false apidocs}
+
+%meson_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
-
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/libatk-1.0.la
+%meson_install -C build
 
 %{!?with_apidocs:rm -rf $RPM_BUILD_ROOT%{_gtkdocdir}/atk}
 
@@ -155,7 +142,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f atk10.lang
 %defattr(644,root,root,755)
-%doc AUTHORS NEWS README
+%doc AUTHORS MAINTAINERS NEWS README
 %attr(755,root,root) %{_libdir}/libatk-1.0.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libatk-1.0.so.0
 %{_libdir}/girepository-1.0/Atk-1.0.typelib
