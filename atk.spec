@@ -7,17 +7,17 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	2.32.0
+Version:	2.34.0
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.32/%{name}-%{version}.tar.xz
-# Source0-md5:	c10b0b2af3c199e42caa6275b845c49d
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.34/%{name}-%{version}.tar.xz
+# Source0-md5:	d2c1a54e332bef627cf4dde240a7254e
 URL:		https://developer.gnome.org/atk/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.19.2
-BuildRequires:	glib2-devel >= 1:2.32.0
+BuildRequires:	glib2-devel >= 1:2.38.0
 %if %(locale -a | grep -q '^C\.utf8$'; echo $?)
 BuildRequires:	glibc-localedb-all
 %endif
@@ -26,16 +26,13 @@ BuildRequires:	gobject-introspection-devel >= 1.32.0
 BuildRequires:	gtk-doc >= 1.25
 %endif
 BuildRequires:	meson >= 0.46.0
-BuildRequires:	ninja
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	python >= 1:2.5
 BuildRequires:	rpmbuild(macros) >= 1.728
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
-Requires:	glib2 >= 1:2.32.0
+Requires:	glib2 >= 1:2.38.0
 Obsoletes:	libatk1.0_0
-# sr@Latn vs. sr@latin
-Conflicts:	glibc-misc < 6:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -66,7 +63,7 @@ Summary(pl.UTF-8):	ATK - pliki nagłówkowe
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	glib2-devel >= 1:2.32.0
+Requires:	glib2-devel >= 1:2.38.0
 Obsoletes:	libatk1.0_0-devel
 
 %description devel
