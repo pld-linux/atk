@@ -7,13 +7,13 @@ Summary:	ATK - Accessibility Toolkit
 Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie z komputerów
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
-Version:	2.36.0
+Version:	2.38.0
 Release:	1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/atk/2.36/%{name}-%{version}.tar.xz
-# Source0-md5:	01aa5ec5138f5f8c9b3a4e3196ed2900
+Source0:	https://download.gnome.org/sources/atk/2.38/%{name}-%{version}.tar.xz
+# Source0-md5:	4dcea15cbf166706c166fc4fee05e3f8
 URL:		https://developer.gnome.org/atk/
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-tools >= 0.19.2
@@ -28,11 +28,12 @@ BuildRequires:	gtk-doc >= 1.25
 BuildRequires:	meson >= 0.46.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	glib2 >= 1:2.38.0
-Obsoletes:	libatk1.0_0
+Obsoletes:	libatk1.0_0 < 1:2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,7 +65,7 @@ Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	glib2-devel >= 1:2.38.0
-Obsoletes:	libatk1.0_0-devel
+Obsoletes:	libatk1.0_0-devel < 1:2
 
 %description devel
 ATK - header files.
