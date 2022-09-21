@@ -1,3 +1,4 @@
+# NOTE: for versions >= 2.46 see at-spi2-core.spec
 #
 # Conditional build:
 %bcond_without	apidocs		# disable gtk-doc
@@ -8,7 +9,7 @@ Summary(pl.UTF-8):	ATK - biblioteka ułatwiająca niepełnosprawnym korzystanie 
 Summary(pt_BR.UTF-8):	Interfaces para suporte a acessibilidade
 Name:		atk
 Version:	2.38.0
-Release:	1
+Release:	1.1
 Epoch:		1
 License:	LGPL v2+
 Group:		X11/Libraries
