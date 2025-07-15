@@ -110,15 +110,15 @@ Dokumentacja API ATK.
 %setup -q
 
 %build
-%meson build \
+%meson \
 	-Ddocs=%{__true_false apidocs}
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %{!?with_apidocs:rm -rf $RPM_BUILD_ROOT%{_gtkdocdir}/atk}
 
